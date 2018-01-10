@@ -1,0 +1,29 @@
+# Create an OSEv3 group that contains the masters and nodes groups
+[OSEv3:children]
+masters
+nodes
+etcd
+
+# Set variables common for all OSEv3 hosts
+[OSEv3:vars]
+ansible_sudo=true
+ansible_user=phil
+ansible_become=true
+deployment_type=origin
+containerized=true
+openshift_release=v3.7.0
+openshift_master_default_subdomain=app.atomic01.techneco.home
+
+# enable htpasswd auth
+openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider', 'filename': '/etc/origin/master/htpasswd'}]
+
+# host group for masters
+[masters]
+ocp.techneco.home
+
+[etcd]
+ocp.techneco.home
+
+# host group for  nodes
+[nodes]
+ocp.techneco.home openshift_schedulable=true openshift_node_labels="{'region': 'infra'}"
