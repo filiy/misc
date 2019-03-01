@@ -1,0 +1,16 @@
+# Add ssh server to existing container
+
+FROM ansible/awx_task:latest
+
+USER root
+
+RUN \
+  yum -y install openssh-clients openssh-server && \
+  yum -y clean all && \
+  touch /run/utmp && \
+  echo "root:root" | chpasswd && \
+  ssh-keygen -A
+
+EXPOSE 22 
+
+ENTRYPOINT ["/usr/sbin/sshd", "-D", "-e"]
