@@ -1,6 +1,6 @@
 yum install -y 
 
-
+teams
 
 #tweaks
 alternatetab
