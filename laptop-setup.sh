@@ -73,6 +73,6 @@ dnf install -y zoom_x86_64.rpm
 wget https://swdl.bluejeans.com/desktop-app/linux/2.17.0/BlueJeans_2.17.0.11.rpm
 dnf install BlueJeans_2.17.0.11.rpm -y 
 
-dnf install -y podman screen skopeo buildah jq glances ansible git cockpit keepassx chromium remmina audacity transmission iptraf falkon gimp libreoffice numix-gtk-theme powertop tlp gnome-system-monitor redshift redshift-gtk iio-sensor-proxy
+dnf install -y podman screen skopeo buildah jq glances ansible git cockpit keepassx chromium remmina audacity transmission iptraf falkon gimp libreoffice numix-gtk-theme powertop tlp gnome-system-monitor redshift redshift-gtk iio-sensor-proxy alsa-tools
 
 #firefox: adblock numixtheme googlecanada
