@@ -4,5 +4,17 @@
     - name: Install Chocolatey packages
       win_chocolatey:
         name:
-        - chromium
+        - googlechrome
+        - firefox
+        - slack
+        - gimp
+        - skype
+        - discord
+        - 7zip
+        - notepadplusplus
+        - vscode
+        - steam-client
+        - battle-net
+        - vlc
+        - git
         state: latest
