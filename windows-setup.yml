@@ -1,6 +1,11 @@
 ---
 - hosts: localhost
   connection: local
+  hosts: localhost
+  vars:
+    ansible_user: phil
+    ansible_connection: winrm
+    ansible_winrm_server_cert_validation: ignore
   tasks:
     - name: Install Chocolatey packages
       win_chocolatey:
