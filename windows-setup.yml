@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Install Chocolatey packages
+      win_chocolatey:
+        name:
+        - chromium
+        state: latest
